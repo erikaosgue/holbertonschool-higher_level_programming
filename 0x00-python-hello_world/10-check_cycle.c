@@ -6,9 +6,7 @@
  */
 int check_cycle(listint_t *list)
 {
-	if (list == NULL)
-		return (0);
-	while (list->next)
+	while (list)
 	{
 		if ((list - (list->next)) <= 0)
 			return (1);
