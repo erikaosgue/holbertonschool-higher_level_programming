@@ -6,11 +6,11 @@
  */
 int check_cycle(listint_t *list)
 {
-	if (list == NULL || list->next == NULL)
+	if (list == NULL)
 		return (0);
 	while (list->next)
 	{
-		if ((list - (list->next)) < 0)
+		if ((list - (list->next)) <+ 0)
 			return (1);
 		list = list->next;
 	}
