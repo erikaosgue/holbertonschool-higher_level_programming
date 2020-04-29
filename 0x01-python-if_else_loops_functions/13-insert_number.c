@@ -1,4 +1,5 @@
 #include "lists.h"
+#include <stdio.h>
 /**
  * insert_node - Add a ned node sorted by the number
  * @head: Points to the head of the node of the list
@@ -11,13 +12,14 @@ listint_t *insert_node(listint_t **head, int number)
 	listint_t *previous;
 	listint_t *current;
 
-	if (head == NULL ||  *head == NULL)
+
+	if (*head == NULL)
 		return (NULL);
 
 	previous = *head;
 	current = *head;
 
-	while (current)
+	while (current->next != NULL)
 	{
 		if (current->n >= number)
 		{
