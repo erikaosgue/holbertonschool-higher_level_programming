@@ -17,7 +17,7 @@ def main():
     elif op == '-':
         print("{} - {} = {}".format(a, b, sub(a, b)))
         exit(0)
-    elif op == "\*":
+    elif op == '*':
         print("{} * {} = {}".format(a, b, mul(a, b)))
         exit(0)
     elif op == '/':
