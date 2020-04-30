@@ -5,7 +5,7 @@ from sys import argv
 
 def main():
     len_argv = len(argv) - 1
-    if len_argv != 2:
+    if len_argv != 3:
         print("Usage: {} <a> <operator> <b>".format(argv[0]))
         exit(1)
     a = int(argv[1])
