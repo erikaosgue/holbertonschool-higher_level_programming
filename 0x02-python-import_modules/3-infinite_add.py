@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 from sys import argv
-import dis
+
 
 def main():
     sum = 0
@@ -12,6 +12,6 @@ def main():
             sum += int(argv[i])
         print("{}".format(sum))
 
-dis.dis(main)
+
 if __name__ == "__main__":
     main()
