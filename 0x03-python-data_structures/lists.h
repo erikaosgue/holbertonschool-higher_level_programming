@@ -41,4 +41,9 @@ void free_dlistint(dlistint_t *head);
 dlistint_t *add_dnodeint(dlistint_t **head, const int n);
 
 
+int listint_len(listint_t *h);
+listint_t *add_nodeint(listint_t **head, const int n);
+listint_t *pop_listint(listint_t **head);
+
+
 #endif /* LISTS_H */

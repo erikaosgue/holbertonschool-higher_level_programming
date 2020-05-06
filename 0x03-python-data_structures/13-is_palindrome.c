@@ -19,90 +19,89 @@ int is_palindrome(listint_t **head)
  */
 int palindrome_verification(listint_t **head)
 {
-	dlistint_t *head_dlink = NULL, *head_to_free = NULL, *tail = NULL;
-	dlistint_t *node_added = NULL, *head_ = NULL;
+	listint_t *current_node = NULL, *head_ = NULL;
 	listint_t *main_head = *head;
-	int num_nodos = 0;
+	int i;
+	int len_list = 0, is_palindrome = 1;
+	int midpoint = 0;
 
-	while (main_head)
+	len_list = listint_len(main_head);
+	midpoint = len_list / 2;
+
+	for (i = 0; i < len_list; i++)
 	{
-		node_added = add_dnodeint(&head_dlink, main_head->n);
-		num_nodos++;
-		if (num_nodos == 1)
-			tail = node_added;
-		main_head = main_head->next;
-	}
-	head_to_free = head_ = head_dlink;
-	while (head_)
-	{
-		if (head_->n == tail->n)
-		{
-			if (num_nodos % 2 == 0 && head_->next == tail)
-			{
-				free_dlistint(head_to_free);
-				return (1);
-			}
-			else if (num_nodos % 2 != 0 && head_ == tail)
-			{
-				free_dlistint(head_to_free);
-				return (1);
-			}
-			head_ = head_->next;
-			tail = tail->prev;
+		if (i < midpoint)
+			current_node = add_nodeint(&head_, main_head->n);
+		else if (i == midpoint && len_list % 2 == 1)
+		{	main_head = main_head->next;
+			continue;
 		}
 		else
-			break;
-	}
-	free_dlistint(head_to_free);
-	return (0);
-}
+		{
 
+			if (current_node->n != main_head->n)
+			{
+				is_palindrome = 0;
+				break;
+			}
+			current_node = pop_listint(&head_);
+		}
+		main_head = main_head->next;
+	}
+	if (!is_palindrome)
+		free_listint(head_);
+	return (is_palindrome);
+}
 /**
- * free_dlistint - free a dlistint_t list.
- * @head: Points to the head that points to the node that is the head
- * Return:Nothing
+ * listint_len - function that prints all the elements of a listint_t list.
+ * @h: Address of the head pointer
+ * Return: the number of nodes there are in the list
  */
-void free_dlistint(dlistint_t *head)
+int listint_len(listint_t *h)
 {
-	dlistint_t *temp;
+	listint_t *t;
+	int i;
 
-	while (head)
-	{
-		temp = head;
-		head = head->next;
-		free(temp);
-	}
+	t = h;
+
+	for (i = 0; t != NULL; i++)
+		t = t->next;
+	return (i);
 }
 
 /**
- * add_dnodeint - adds a new node at the beginning of a dlistint_t list
- * @head: Points to the head that points to the node that is the head
- * of the list
- * @n: Integer value of the new node
+ * add_nodeint - adds a new node at the beginning of a listint_t list.
+ * @head: Its the pointer to the Address of the head pointer
+ * @n: its the data of the node (an int)
  * Return: the address of the new element, or NULL if it failed
  */
-dlistint_t *add_dnodeint(dlistint_t **head, const int n)
+listint_t *add_nodeint(listint_t **head, const int n)
 {
-	dlistint_t *current;
-	dlistint_t *new;
+	listint_t *new;
 
-	if (head == NULL)
-		return (NULL);
-	current = *head;
-	new = malloc(sizeof(dlistint_t));
+	new = malloc(sizeof(listint_t));
 	if (new == NULL)
 		return (NULL);
 	new->n = n;
-	new->prev = NULL;
-
-	if (current == NULL)
-	{
-		new->next = NULL;
-		*head = new;
-		return (new);
-	}
-	current->prev = new;
-	new->next = current;
+	new->next = *head;
 	*head = new;
 	return (new);
+
+
+}
+/**
+ * pop_listint - deletes the head node of a listint_t linked list
+ * @head: Its a double pointer to the addres of the head pointer
+ * Return: the head node’s data (n -> int).
+ */
+listint_t *pop_listint(listint_t **head)
+{
+	listint_t *t;
+
+	if (*head == NULL)
+		return (0);
+	t = (*head);
+	(*head) = (*head)->next;
+	free(t);
+	return (*head);
 }
