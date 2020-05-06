@@ -1,4 +1,5 @@
 #include "lists.h"
+#include <stdio.h>
 
 /**
  * is_palindrome -  checks if a singly linked list is a palindrome
@@ -20,22 +21,16 @@ int is_palindrome(listint_t **head)
 int palindrome_verification(listint_t **head)
 {
 
-	dlistint_t *head_ = NULL, *temp = NULL, *head_to_free = NULL, *tail = NULL;
+	dlistint_t *head_ = NULL, *head_to_free = NULL, *tail = NULL;
 	int num_nodos = 0;
 
 	while (*head)
 	{
-		add_dnodeint(&head_, (*head)->n);
+		tail = add_dnodeint(&head_, (*head)->n);
 		num_nodos++;
 		*head = (*head)->next;
 	}
-	head_to_free = temp = head_;
-	while (temp)
-	{
-		if (temp->next == NULL)
-			tail = temp;
-		temp = temp->next;
-	}
+	head_to_free = head_;
 	while (head_)
 	{
 		if (head_->n == tail->n)
@@ -102,10 +97,9 @@ dlistint_t *add_dnodeint(dlistint_t **head, const int n)
 	{
 		new->next = NULL;
 		*head = new;
-		return (*head);
+		return (new);
 	}
 	current->prev = new;
 	new->next = current;
-	*head = new;
-	return (*head);
+	return (new);
 }
