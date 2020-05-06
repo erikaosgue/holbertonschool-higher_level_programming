@@ -2,9 +2,10 @@
 
 
 def add_tuple(a, b):
+        i = 0
         a_len = len(a)
         b_len = len(b)
-        res_len = min(2, max(a_len, b_len))
+        res_len = 2
         res = ()
 
         for i in range(res_len):
