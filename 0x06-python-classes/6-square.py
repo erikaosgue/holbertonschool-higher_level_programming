@@ -93,6 +93,8 @@ class Square:
         """
         if self.__size == 0:
             print()
+            return
+
         for y in range(self.__position[1]):
             print()
         for row in range(self.__size):
