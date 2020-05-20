@@ -91,19 +91,17 @@ class Square:
         prints in stdout the square with the character #
 
         """
-        s = ''
+        s = ""
         if self.__size == 0:
-            s += "\n"
-            return s
+            s += ""
         else:
             for y in range(self.__position[1]):
-                s += '\n'
+                s += "\n"
             for row in range(self.__size):
                 for x in range(self.__position[0]):
-                    s += ' '
+                    s += " "
                 for colum in range(self.__size):
-                    s += '#'
-                s += '\n'
-        if s[-1] == "\n":
-            s = s[:-1]
+                    s += "#"
+                if (row != self.__size - 1):
+                    s += "\n"
         return s
