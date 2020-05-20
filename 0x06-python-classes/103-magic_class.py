@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 """Module that get the areaof a circunference"""
-import dis
 import math
 
 
@@ -22,4 +21,3 @@ class MagicClass:
     def circumference(self):
         "Get the circunference "
         return 2 * math.pi * self._MagicClass__radius
-dis.dis(MagicClass)
