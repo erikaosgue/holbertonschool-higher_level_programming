@@ -16,8 +16,8 @@ class Square:
             size (int): Number to be square
             position (Tuple): The position of the square
         """
-        self.__size = size
-        self.__position = position
+        self.size = size
+        self.position = position
 
     @property
     def size(self):
@@ -68,12 +68,13 @@ class Square:
         Returns:
             Tuple: Contain the 2 coordanates (x and y)
         """
-
-        if isinstance(value[0], int) and isinstance(value[1], int)\
-                and value[0] > 0 and value[1] > 0:
-            self.__position = value
-        else:
+        if (not isinstance(value, tuple) or
+                len(value) != 2 or
+                not all(isinstance(num, int) for num in value) or
+                not all(num >= 0 for num in value)):
             raise TypeError('position must be a tuple of 2 positive integers')
+        else:
+            self.__position = value
 
     def area(self):
         """area A pulic instance method that returns
@@ -90,13 +91,13 @@ class Square:
         prints in stdout the square with the character #
 
         """
-        if self.size == 0:
-            print(" ", end="")
-        for y in range(self.position[1]):
+        if self.__size == 0:
             print()
-        for row in range(self.size):
-            for x in range(self.position[0]):
+        for y in range(self.__position[1]):
+            print()
+        for row in range(self.__size):
+            for x in range(self.__position[0]):
                 print(" ", end="")
-            for colum in range(self.size):
+            for colum in range(self.__size):
                 print("#", end="")
             print()
