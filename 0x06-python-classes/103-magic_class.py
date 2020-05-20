@@ -1,22 +1,25 @@
 #!/usr/bin/python3
-"comment"
+"""Module that get the areaof a circunference"""
+import dis
 import math
 
 
 class MagicClass:
-    "comment"
+    "Class that creates instance"
 
     def __init__(self, radius=0):
-        "comment"
+        "Constructor of MagicClass"
         self._MagicClass__radius = 0
+
         if type(radius) is not int and type(radius) is not float:
             raise TypeError("radius must be a number")
         self._MagicClass__radius = radius
 
     def area(self):
-        "comment"
+        "area of the circunference"
         return self._MagicClass__radius ** 2 * math.pi
 
     def circumference(self):
-        "comment"
+        "Get the circunference "
         return 2 * math.pi * self._MagicClass__radius
+dis.dis(MagicClass)
