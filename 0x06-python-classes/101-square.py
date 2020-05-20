@@ -86,14 +86,15 @@ class Square:
         return (self.__size * self.__size)
 
     def __str__(self):
-        """my_print
+        """str
 
         prints in stdout the square with the character #
 
         """
         s = ''
         if self.__size == 0:
-            s += '\n'
+            s += "\n"
+            return s
         else:
             for y in range(self.__position[1]):
                 s += '\n'
@@ -102,6 +103,7 @@ class Square:
                     s += ' '
                 for colum in range(self.__size):
                     s += '#'
-                if (row != self.__size - 1):
-                    s += '\n'
+                s += '\n'
+        if s[-1] == "\n":
+            s = s[:-1]
         return s
