@@ -3,6 +3,7 @@
 
 
 class Node:
+    """ Creates A New Node """
     __data = 0
     __next_node = None
 
@@ -32,6 +33,7 @@ class Node:
 
 
 class SinglyLinkedList:
+    """Creates the single Linked list"""
 
     def __init__(self):
         self.__head = None
