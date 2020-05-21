@@ -5,11 +5,10 @@
 class Node:
     """ Creates A New Node """
     __data = 0
-    __next_node = None
 
     def __init__(self, data, next_node=None):
-        self.__data = data
-        self.__next_node = next_node
+        self.data = data
+        self.next_node = next_node
 
     @property
     def data(self):
