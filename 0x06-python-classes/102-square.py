@@ -54,25 +54,85 @@ class Square:
         return (self.__size * self.__size)
 
     def __lt__(self, other):
+        """__lt__ less than
+
+        Function that compare two objects using less than
+
+        Args:
+            other (object): Is the area to the other member will be comparing
+
+        Returns:
+            [bool]: True
+        """
         if self.area() < other.area():
             return True
 
     def __le__(self, other):
+        """__le__ less or equal to
+
+        Function that compare two objects using less or equal to
+
+        Args:
+            other (object): Is the area to the other member will be comparing
+
+        Returns:
+            [bool]: True
+        """
         if self.area() <= other.area():
             return True
 
     def __eq__(self, other):
+        """__eq__ equal
+
+        Function that verifies if two objects have same area
+
+        Args:
+            other (object): Is the area to the other member will be comparing
+
+        Returns:
+            [bool]: True
+        """
         if self.area() == other.area():
             return True
 
     def __gt__(self, other):
+        """__gt__ less than
+
+        Function that compare two objects using greater than
+
+        Args:
+            other (object): Is the area to the other member will be comparing
+
+        Returns:
+            [bool]: True
+        """
         if self.area() > other.area():
             return True
 
     def __ge__(self, other):
+        """__ge__ greater or equal to
+
+        Function that compare two objects using >=
+
+        Args:
+            other (object): Is the area to the other member will be comparing
+
+        Returns:
+            [bool]: True
+        """
         if self.area() >= other.area():
             return True
 
     def __ne__(self, other):
+        """__ne__ not equal
+
+        Function that checks if two objects are not equal
+
+        Args:
+            other (object): Is the area to the other member will be comparing
+
+        Returns:
+            [bool]: True
+        """
         if self.area() != other.area():
             return True
