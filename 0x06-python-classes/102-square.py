@@ -45,12 +45,6 @@ class Square:
             raise TypeError('size must be an integer')
 
     def area(self):
-        """area A pulic instance method that returns
-        the area of a square
-
-        Returns:
-            int: Area of the square
-        """
         return (self.__size * self.__size)
 
     def __lt__(self, other):
