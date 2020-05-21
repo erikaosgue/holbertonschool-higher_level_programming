@@ -80,6 +80,8 @@ class Square:
         """
         if self.area() <= other.area():
             return True
+        else:
+            return False
 
     def __eq__(self, other):
         """__eq__ equal
@@ -94,6 +96,8 @@ class Square:
         """
         if self.area() == other.area():
             return True
+        else:
+            return False
 
     def __gt__(self, other):
         """__gt__ less than
@@ -108,6 +112,8 @@ class Square:
         """
         if self.area() > other.area():
             return True
+        else:
+            return False
 
     def __ge__(self, other):
         """__ge__ greater or equal to
@@ -122,6 +128,8 @@ class Square:
         """
         if self.area() >= other.area():
             return True
+        else:
+            return False
 
     def __ne__(self, other):
         """__ne__ not equal
@@ -136,3 +144,5 @@ class Square:
         """
         if self.area() != other.area():
             return True
+        else:
+            return False
