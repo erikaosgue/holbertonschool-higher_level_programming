@@ -67,6 +67,6 @@ class SinglyLinkedList:
         while curr:
             s += str(curr.data) + '\n'
             curr = curr.next_node
-        if s[-1] == "\n":
+        if s and s[-1] == "\n":
             s = s[:-1]
         return s
