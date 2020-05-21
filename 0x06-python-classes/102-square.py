@@ -54,25 +54,25 @@ class Square:
         return (self.__size * self.__size)
 
     def __lt__(self, other):
-        if self.size < other.size:
+        if self.area() < other.area():
             return True
 
     def __le__(self, other):
-        if self.size <= other.size:
+        if self.area() <= other.area():
             return True
 
     def __eq__(self, other):
-        if self.size == other.size:
+        if self.area() == other.area():
             return True
 
     def __gt__(self, other):
-        if self.size > other.size:
+        if self.area() > other.area():
             return True
 
     def __ge__(self, other):
-        if self.size >= other.size:
+        if self.area() >= other.area():
             return True
 
     def __ne__(self, other):
-        if self.size != other.size:
+        if self.area() != other.area():
             return True
