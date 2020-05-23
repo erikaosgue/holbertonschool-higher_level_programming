@@ -5,6 +5,7 @@
     Return: nothing
 """
 
+
 def print_square(size):
     """
         print square by the size
