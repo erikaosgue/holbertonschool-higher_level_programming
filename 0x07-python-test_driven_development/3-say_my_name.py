@@ -1,9 +1,10 @@
 #!/usr/bin/python3
-"""2. Say my name  a function that prints a square with the character #.
+"""2. Say my name
+Write a function that prints My name is <first name> <last name>
 
-size is the size length of the square
-if size is a float and is less than 0,
- raise a TypeError exception with the message size must be an integer"""
+first_name and last_name must be strings otherwise,
+raise a TypeError exception with the message first_name must be a string
+or last_name must be"""
 
 
 def say_my_name(first_name, last_name=""):
