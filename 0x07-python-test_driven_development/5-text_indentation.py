@@ -2,15 +2,14 @@
 """ 4. Text indentation
     [Function that prints a text with 2 new lines after each of these
     characters: ., ? and :
-
 text must be a string, otherwise raise a TypeError exception with the message:
-text must be a string
-There should be no space at the beginning or at the end of each printed line
-"""
+text must be a string"""
 
 
 def text_indentation(text):
-    """ Text indentation """
+    """ Text indentation
+    Args String
+    """
 
     if not isinstance(text, str):
         raise TypeError('text must be a string')
