@@ -1,5 +1,12 @@
 #!/usr/bin/python3
-"""4. Text indentation"""
+""" 4. Text indentation
+    [Function that prints a text with 2 new lines after each of these
+    characters: ., ? and :
+
+text must be a string, otherwise raise a TypeError exception with the message:
+text must be a string
+There should be no space at the beginning or at the end of each printed line
+"""
 
 
 def text_indentation(text):
@@ -15,7 +22,8 @@ def text_indentation(text):
             print()
             last_newline = True
 
-        elif (text[idx] == ' ' or text[idx] == '\n') and last_newline:
+        elif (text[idx] == ' ' or text[idx] == '\n' or text[idx] == '\t')\
+                and last_newline:
             if text[idx] == '\n':
                 print(text[idx], end="")
             continue
