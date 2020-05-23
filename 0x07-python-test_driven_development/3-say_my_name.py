@@ -8,7 +8,7 @@
 
 def say_my_name(first_name, last_name=""):
     """ Say my name
-    Args 
+    Args
     first_name:the first name
     last_Name: The last name
     """
