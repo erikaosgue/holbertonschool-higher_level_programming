@@ -1,0 +1,45 @@
+=============================================
+Testing the function that divides the numbers
+of a matrix with one divisor
+4-print_square
+=============================================
+
+
+::
+>>> print_square = __import__('4-print_square').print_square
+
+    #test_1
+    >>> print_square(4)
+    ####
+    ####
+    ####
+    ####
+
+    #test_2
+    >>> print_square(-1)
+    Traceback (most recent call last):
+    ...
+    ValueError: size must be >= 0
+
+    #test_3
+    >>> print_square('a')
+    Traceback (most recent call last):
+    ...
+    TypeError: size must be an integer
+
+    #test_4
+    >>> print_square(2.0000)
+    Traceback (most recent call last):
+    ...
+    TypeError: size must be an integer
+
+
+    #test_5
+    >>> print_square(True)
+    Traceback (most recent call last):
+    ...
+    TypeError: size must be an integer
+
+
+
+

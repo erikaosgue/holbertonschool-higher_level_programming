@@ -1,0 +1,64 @@
+=============================================
+Testing the function that divides the numbers
+of a matrix with one divisor
+5-text_indentation
+=============================================
+
+::
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+    #test_1
+    >>> text_indentation("""Utinam. quidem ? dicerent: alium alio beatiorem! Iam: ruinas? videresguillaume""")
+    Utinam.
+    <BLANKLINE>
+    quidem ?
+    <BLANKLINE>
+    dicerent:
+    <BLANKLINE>
+    alium alio beatiorem! Iam:
+    <BLANKLINE>
+    ruinas?
+    <BLANKLINE>
+    videresguillaume
+
+    #test_2
+    >>> text_indentation("""    ?  :  .""")
+        ?
+    <BLANKLINE>
+    :
+    <BLANKLINE>
+    .
+    <BLANKLINE>
+
+    #text_3
+    >>> text_indentation("")
+
+    #test_4
+    >>> text_indentation(1)
+    Traceback (most recent call last):
+    ...
+    TypeError: text must be a string
+
+    #text_5
+    >>> text_indentation(False)
+    Traceback (most recent call last):
+    ...
+    TypeError: text must be a string
+
+    #test_6
+    >>> text_indentation("""Utinam. quidem ?\n dicerent: alium alio beatiorem! Iam: ruinas?\t videresguillaume""")
+    Utinam.
+    <BLANKLINE>
+    quidem ?
+    <BLANKLINE>
+    <BLANKLINE>
+    dicerent:
+    <BLANKLINE>
+    alium alio beatiorem! Iam:
+    <BLANKLINE>
+    ruinas?
+    <BLANKLINE>
+    videresguillaume
+
+
+
