@@ -3,7 +3,7 @@
 
 
 def add_integer(a, b=98):
-    """Addition of two integers""""
+    """Addition of two integers"""
     if not isinstance(a, (float, int)) or isinstance(a, bool):
         raise TypeError('a must be an integer')
 
