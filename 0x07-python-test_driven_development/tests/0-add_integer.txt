@@ -1,8 +1,6 @@
-=============================================
-Testing the function that adds two numbers
-0-add_integer
-=============================================
-
+"""
+    Module add integer exercise 0
+"""
 >>> add_integer = __import__('0-add_integer').add_integer
 
 The arguments can be int or float with return int
