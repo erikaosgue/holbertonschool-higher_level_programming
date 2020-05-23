@@ -1,9 +1,15 @@
 #!/usr/bin/python3
-""" 1. Divide a matrix"""
+""" 1. Divide a matrix
+Write a function that prints My name is <first name> <last name>
+First_name and last_name must be strings otherwise,
+raise a TypeError exception with the message first_name must be a
+string or last_name must be a string"""
 
 
 def matrix_divided(matrix, div):
-    """ Matriz of integers divided with div"""
+    """ Matriz of integers divided with div
+
+    """
 
     msj = 'matrix must be a matrix (list of lists) of integers/floats'
 
