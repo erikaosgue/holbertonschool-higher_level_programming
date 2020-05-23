@@ -21,30 +21,24 @@ The arguments can be int or float with return int
 
 >>> add_integer((3, 0), 1)
 Traceback (most recent call last):
-...
 TypeError: a must be an integer
 
 >>> add_integer([3, 0], 1)
 Traceback (most recent call last):
-...
 TypeError: a must be an integer
 
 >>> add_integer(None)
 Traceback (most recent call last):
-...
 TypeError: a must be an integer
 
 >>> add_integer("Hola", "Bien")
 Traceback (most recent call last):
-...
 TypeError: a must be an integer
 
 >>> add_integer(2, {})
 Traceback (most recent call last):
-...
 TypeError: b must be an integer
 
 >>> add_integer(True, False)
 Traceback (most recent call last):
-...
 TypeError: a must be an integer
