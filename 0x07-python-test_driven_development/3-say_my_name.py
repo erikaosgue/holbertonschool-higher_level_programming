@@ -1,15 +1,16 @@
 #!/usr/bin/python3
-"""2. Say my name
-Write a function that prints My name is <first name> <last name>
-
-first_name and last_name must be strings otherwise,
-raise a TypeError exception with the message first_name must be a string
-or last_name must be"""
+"""
+    2. Say my name Module
+    Function that prints the first and the last name
+    Return: Nothing
+"""
 
 
 def say_my_name(first_name, last_name=""):
     """ Say my name
-    Args first name, Last Name
+    Args 
+    first_name:the first name
+    last_Name: The last name
     """
 
     if not isinstance(first_name, str):
