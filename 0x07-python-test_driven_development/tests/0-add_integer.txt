@@ -19,6 +19,9 @@ The arguments can be int or float with return int
 >>> add_integer(2)
 100
 
+>>> add_integer(3.0)
+101
+
 >>> add_integer((3, 0), 1)
 Traceback (most recent call last):
 TypeError: a must be an integer
@@ -31,14 +34,14 @@ TypeError: a must be an integer
 Traceback (most recent call last):
 TypeError: a must be an integer
 
->>> add_integer("Hola", "Bien")
+>>> add_integer("Hola", 2)
 Traceback (most recent call last):
 TypeError: a must be an integer
 
->>> add_integer(2, {})
+>>> add_integer(2, "Hallo")
 Traceback (most recent call last):
 TypeError: b must be an integer
 
->>> add_integer(True, False)
+>>> add_integer(3, False)
 Traceback (most recent call last):
-TypeError: a must be an integer
+TypeError: b must be an integer
