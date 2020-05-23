@@ -9,10 +9,10 @@ def add_integer(a, b=98):
     Args: a int b an int
     """
 
-    if not isinstance(a, (float, int)) or isinstance(a, bool):
+    if not isinstance(a, (int, float)) or isinstance(a, bool):
         raise TypeError('a must be an integer')
 
-    elif not isinstance(b, (float, int)) or isinstance(b, bool):
+    elif not isinstance(b, (int, float)) or isinstance(b, bool):
         raise TypeError('b must be an integer')
     else:
         a = int(round(a))
