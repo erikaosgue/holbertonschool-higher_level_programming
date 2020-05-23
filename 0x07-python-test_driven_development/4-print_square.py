@@ -1,14 +1,15 @@
 #!/usr/bin/python3
-"""3. Print square a stringa function that prints a square with the character #.
+"""3. Print square a stringa function that prints a square
+with the character #.
 
 size is the size length of the square
 if size is a float and is less than 0,
- raise a TypeError exception with the message size must be an integer""""
+ raise a TypeError exception with the message size must be an integer"""
 
 
 def print_square(size):
     """Print square by the size
-    Args size
+    size
     """
 
     if isinstance(size, bool):
