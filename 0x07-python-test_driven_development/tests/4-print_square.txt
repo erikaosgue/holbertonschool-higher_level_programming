@@ -40,6 +40,12 @@ of a matrix with one divisor
     ...
     TypeError: size must be an integer
 
+    #test_6
+    >>> print_square(None)
+    Traceback (most recent call last):
+    ...
+    TypeError: size must be an integer
+
 
 
 
