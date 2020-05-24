@@ -16,7 +16,7 @@ class TestMaxInteger(unittest.TestCase):
     def test_value_max2(self):
         """Test value max"""
         self.assertEqual(max_integer([1, 2, 3]), 3)
-        
+
     def test_value_str(self):
         """Test value with str"""
         self.assertEqual(max_integer(["Hello", "World", "No"]), "World")
