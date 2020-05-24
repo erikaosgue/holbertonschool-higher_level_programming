@@ -5,50 +5,62 @@
 
 The arguments can be int or float with return int
 
+#test_1
 >>> add_integer(2, 3)
 5
 
+#test_2
 >>> add_integer(2.0, -3.0)
 -1
 
+#test_3
 >>> add_integer(-3, -2)
 -5
 
+#test_4
 >>> add_integer(2)
 100
 
+#test_5
 >>> add_integer(3.0)
 101
 
+#test_6
 >>> add_integer((float("nan")), 1)
 Traceback (most recent call last):
-ValueError: cannot convert float NaN to integer
+TypeError: a must be an integer
 
+#test_7
 >>> add_integer(1, (float("NaN")))
 Traceback (most recent call last):
-ValueError: cannot convert float NaN to integer
+TypeError: b must be an integer
 
+#test_8
 >>> add_integer((float("inf")), 1)
 Traceback (most recent call last):
 TypeError: a must be an integer
 
-
+#test_9
 >>> add_integer(1, (float("inf")))
 Traceback (most recent call last):
 TypeError: b must be an integer
 
+#test_10
 >>> add_integer(None)
 Traceback (most recent call last):
 TypeError: a must be an integer
 
+#test_11
 >>> add_integer("Hola", 2)
 Traceback (most recent call last):
 TypeError: a must be an integer
 
+#test_12
 >>> add_integer(2, "Hallo")
 Traceback (most recent call last):
 TypeError: b must be an integer
 
+#test_14
 >>> add_integer(3, False)
 Traceback (most recent call last):
 TypeError: b must be an integer
