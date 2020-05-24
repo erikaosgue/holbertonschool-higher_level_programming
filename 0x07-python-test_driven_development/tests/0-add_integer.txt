@@ -20,7 +20,7 @@ The arguments can be int or float with return int
 >>> add_integer(3.0)
 101
 
->>> add_integer((float("NaN")), 1)
+>>> add_integer((float("nan")), 1)
 Traceback (most recent call last):
 ValueError: cannot convert float NaN to integer
 
