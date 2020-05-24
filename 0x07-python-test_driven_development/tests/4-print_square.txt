@@ -46,6 +46,7 @@ of a matrix with one divisor
     ...
     TypeError: size must be an integer
 
-
+    #test_7
+    >>> print_square()
 
 

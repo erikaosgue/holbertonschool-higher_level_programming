@@ -6,7 +6,7 @@
 """
 
 
-def print_square(size):
+def print_square(size=0):
     """
         print square by the size
         size
