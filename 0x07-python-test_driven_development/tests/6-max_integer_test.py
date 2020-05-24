@@ -13,6 +13,10 @@ class TestMaxInteger(unittest.TestCase):
         """Test value max"""
         self.assertEqual(max_integer([3, 2, 1]), 3)
 
+    def test_value_max2(self):
+        """Test value max"""
+        self.assertEqual(max_integer([1, 2, 3]), 3)
+        
     def test_value_str(self):
         """Test value with str"""
         self.assertEqual(max_integer(["Hello", "World", "No"]), "World")
@@ -41,3 +45,7 @@ class TestMaxInteger(unittest.TestCase):
     def test_value_bool(self):
         """Test value with bool"""
         self.assertEqual(max_integer([True, False]), True)
+
+    def test_one_Value(self):
+        """Test value just one element"""
+        self.assertEqual(max_integer([1]), 1)
