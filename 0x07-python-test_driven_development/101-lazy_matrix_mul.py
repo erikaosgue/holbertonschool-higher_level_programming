@@ -6,7 +6,7 @@ by using the module NumPy
 import numpy
 
 
-def lazy_matrix_mul(m_a=[], m_b=[]):
+def lazy_matrix_mul(m_a, m_b):
     """ Multiplies two matrices using Numpy
         m_a: Matriz a
         m_b: Matriz b
