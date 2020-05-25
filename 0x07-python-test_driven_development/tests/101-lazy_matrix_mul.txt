@@ -1,0 +1,84 @@
+
+=============================================
+Testing the function multiplies two matrices
+101-lazy_matrix_mul
+
+=============================================
+
+::
+    >>> lazy_matrix_mul = __import__('101-lazy_matrix_mul').lazy_matrix_mul
+
+#test_1
+>>> lazy_matrix_mul([[1, 2], [3, 4]], [[1, 2], [3, 4]])
+array([[ 7, 10],
+       [15, 22]])
+
+#test_2
+>>> lazy_matrix_mul([[1, 2]], [[3, 4], [5, 6]])
+array([[13, 16]])
+
+#test_3
+>>> lazy_matrix_mul([[1, 2, 3]], [[1, 2, 3], [4,5, 6], [7, 8, 9]])
+array([[30, 36, 42]])
+
+#test_4
+>>> lazy_matrix_mul([[1, 2, 3], [4, 5, 6]], [[1], [2], [3]])
+array([[14],
+       [32]])
+
+#test_5
+>>> lazy_matrix_mul([[1, 2, 3]], [[1], [2]])
+Traceback (most recent call last):
+ValueError: m_a and m_b can't be multiplied
+
+
+#test_6
+>>> lazy_matrix_mul([[]], [[1, 2], [3, 4]])
+Traceback (most recent call last):
+ValueError: m_a can't be empty
+
+#test_7
+>>> lazy_matrix_mul([[1, 2], [3, 4]], [])
+Traceback (most recent call last):
+ValueError: m_b can't be empty
+
+#test_8
+>>> lazy_matrix_mul([1, 2, 3, 4], [[5, 6], [7, 8]])
+Traceback (most recent call last):
+TypeError: m_a must be a list of lists
+
+#test_9
+>>> lazy_matrix_mul([[1, 2]], [[1, 2]])
+Traceback (most recent call last):
+ValueError: m_a and m_b can't be multiplied
+
+#test_10
+>>> lazy_matrix_mul([[1, 2], [3,'$']], [[1, 2]])
+Traceback (most recent call last):
+TypeError: m_a should contain only integers or floats
+
+#test_11
+>>> lazy_matrix_mul([[1, 2], [3,6]], [[1, "1"]])
+Traceback (most recent call last):
+TypeError: m_b should contain only integers or floats
+
+#test_12
+>>> lazy_matrix_mul([[1, 2], [3, 6, 7]], [[1, 2]])
+Traceback (most recent call last):
+TypeError: each row of m_a must be of the same size
+
+#test_13
+>>> lazy_matrix_mul([[1, 2], [3, 6]], [[1, 2], [1]])
+Traceback (most recent call last):
+TypeError: each row of m_b must be of the same size
+
+
+#test_14
+>>> lazy_matrix_mul([[1, 2], [3, 4]])
+Traceback (most recent call last):
+ValueError: m_b can't be empty
+
+#test_15
+>>> lazy_matrix_mul()
+Traceback (most recent call last):
+ValueError: m_a can't be empty
