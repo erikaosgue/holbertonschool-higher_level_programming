@@ -91,3 +91,7 @@ TypeError: ufunc 'multiply' did not contain a loop with signature matching types
 Traceback (most recent call last):
 TypeError: ufunc 'multiply' did not contain a loop with signature matching types dtype('<U9') dtype('<U9') dtype('<U9')
 
+#test_18
+>>> lazy_matrix_mul(["Hola"], [[1, 2]])
+Traceback (most recent call last):
+ValueError: data type must provide an itemsize
