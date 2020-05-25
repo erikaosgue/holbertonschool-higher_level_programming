@@ -6,7 +6,7 @@ A function that multiplies 2 matrices
 """
 
 
-def matrix_mul(m_a, m_b):
+def matrix_mul(m_a=[], m_b=[]):
     """matrix_mul
 
     Args:
@@ -24,6 +24,9 @@ def matrix_mul(m_a, m_b):
     if len(m_b) == 0 or not m_b[0]:
         raise ValueError("m_b can't be empty")
 
+    if not isinstance(m_a[0], list):
+        raise TypeError("m_a must be a list of lists")
+
     # Testing if row in matix a is a list
     len_row_a = len(m_a[0])
     for row in m_a:
@@ -35,8 +38,10 @@ def matrix_mul(m_a, m_b):
             if not isinstance(number, (int, float)):
                 raise TypeError("m_a should contain only integers or floats")
 
+    if not isinstance(m_b[0], list):
+        raise TypeError("m_b must be a list of lists")
+
     # Testing if row in matix b is a list
-    len_colum_b = 0
     len_row_b = len(m_b[0])
     for row in m_b:
         if not isinstance(row, list):
