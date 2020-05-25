@@ -7,6 +7,11 @@ import numpy
 
 
 def lazy_matrix_mul(m_a=[], m_b=[]):
+    """ Multiplies two matrices using Numpy
+        m_a: Matriz a
+        m_b: Matriz b
+    """
+
     if not isinstance(m_a, list):
         raise TypeError("m_a must be a list")
     if not isinstance(m_b, list):
