@@ -16,6 +16,7 @@ class Rectangle:
             height
             area
             perimeter
+            __str__
     """
 
     def __init__(self, width=0, height=0):
@@ -25,8 +26,8 @@ class Rectangle:
                 width (integer): Width if the rectangle.
                 height (integer): height of the rectangle
         """
-        self.width = width
-        self.height = height
+        self.__width = width
+        self.__height = height
 
     # get the with
     @property
@@ -69,12 +70,3 @@ class Rectangle:
                 if i != self.height - 1:
                     s += "\n"
         return s
-
-    # def __repr__(self):
-    #     s = ""
-    #     if self.perimeter() != 0:
-    #         for i in range(self.height):
-    #             for j in range(self.width):
-    #                 s += "#"
-    #             s += "\n"
-    #     return s
