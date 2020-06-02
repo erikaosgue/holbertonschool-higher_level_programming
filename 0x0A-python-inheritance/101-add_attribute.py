@@ -13,4 +13,6 @@ def add_attribute(obj="", attribute="", name=""):
         raise TypeError("can't add new attribute")
     if attribute == "" or name == "":
         raise TypeError("can't add new attribute")
+    if type(attribute) is not str or type(name) is not str:
+        raise TypeError("can't add new attribute")
     setattr(obj, attribute, name)
