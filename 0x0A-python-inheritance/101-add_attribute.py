@@ -11,4 +11,6 @@ def add_attribute(obj="", attribute="", name=""):
     """
     if str(type(obj)) != "<class '__main__.MyClass'>":
         raise TypeError("can't add new attribute")
+    if attribute == "" or name == "":
+        raise TypeError("can't add new attribute")
     setattr(obj, attribute, name)
