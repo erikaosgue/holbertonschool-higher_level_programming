@@ -9,7 +9,8 @@ def add_attribute(obj="", attribute="", name=""):
     """
         function that adds a new attribute to an object
     """
-    if str(type(obj)) != "<class '__main__.MyClass'>":
+    # if str(type(obj)) != "<class '__main__...>":
+    if not hasattr(obj, '__class__'):
         raise TypeError("can't add new attribute")
     if attribute == "" or name == "" or obj == "":
         raise TypeError("can't add new attribute")
