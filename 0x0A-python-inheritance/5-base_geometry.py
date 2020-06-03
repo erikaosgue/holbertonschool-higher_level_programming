@@ -3,6 +3,7 @@
     5. Geometry module
 """
 
+
 class BaseGeometry:
     """ an empty class"""
     pass
