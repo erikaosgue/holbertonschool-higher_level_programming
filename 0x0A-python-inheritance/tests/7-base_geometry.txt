@@ -41,11 +41,6 @@ TypeError: integer_validator() missing 2 required positional arguments: 'name' a
 Traceback (most recent call last):
 TypeError: Hello must be an integer
 
->>> bg = BaseGeometry()
->>> bg.integer_validator("Hello", {'a': 1, 'b': 1})
-Traceback (most recent call last):
-TypeError: Hello must be an integer
-
 >>> bg.integer_validator("Hello", -2)
 Traceback (most recent call last):
 ValueError: Hello must be greater than 0
