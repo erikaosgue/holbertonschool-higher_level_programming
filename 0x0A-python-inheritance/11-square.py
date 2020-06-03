@@ -13,14 +13,13 @@ class BaseGeometry:
         if value <= 0:
             raise ValueError("{} must be greater than 0".format(name))
 
-
 class Rectangle(BaseGeometry):
 
     def __init__(self, width, height):
-        # super().integer_validator("width", width)
-        # super().integer_validator("height", height)
-        BaseGeometry.integer_validator(self, "width", width)
-        BaseGeometry.integer_validator(self, "height", height)
+        super().integer_validator("width", width)
+        super().integer_validator("height", height)
+        # BaseGeometry.integer_validator(self, "width", width)
+        # BaseGeometry.integer_validator(self, "height", height)
         self.__width = width
         self.__height = height
 
@@ -29,7 +28,6 @@ class Rectangle(BaseGeometry):
 
     def __str__(self):
         return "[Rectangle] {}/{}".format(self.__width, self.__height)
-
 
 class Square(Rectangle):
     def __init__(self, size):
