@@ -4,6 +4,7 @@
     module: 10-class_to_json.py
 """
 
+
 def class_to_json(obj):
     """class_to_json adds all arguments to a Python list
     Args:
