@@ -5,7 +5,7 @@
 
 
 >>> bg = BaseGeometry()
->>> bg.integer_validator("", "")
+>>> bg.integer_validator("", "hey")
 Traceback (most recent call last):
 ...
 TypeError:  must be an integer
@@ -64,3 +64,5 @@ TypeError: Hello must be an integer
 >>> bg.area()
 Traceback (most recent call last):
 Exception: area() is not implemented
+
+>>> bg.integer_validator("my_int", 12)
