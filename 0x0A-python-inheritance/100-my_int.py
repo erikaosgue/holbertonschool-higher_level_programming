@@ -9,5 +9,6 @@ class MyInt(int):
 
     def __eq__(self, other):
         return not (self.number == other)
+
     def __ne__(self, other):
         return not (self.number != other)
