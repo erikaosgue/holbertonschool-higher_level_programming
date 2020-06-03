@@ -1,0 +1,48 @@
+"""
+    1. My list
+"""
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+
+>>> bg = BaseGeometry()
+>>> bg.integer_validator("", "")
+Traceback (most recent call last):
+...
+TypeError:  must be an integer
+
+>>> bg = BaseGeometry()
+>>> bg.integer_validator("width", (1, 2))
+Traceback (most recent call last):
+TypeError: width must be an integer
+
+
+>>> bg = BaseGeometry()
+>>> bg.integer_validator("width", [1, 2])
+Traceback (most recent call last):
+TypeError: width must be an integer
+
+>>> bg = BaseGeometry()
+>>> bg.integer_validator("width", True)
+Traceback (most recent call last):
+TypeError: width must be an integer
+
+>>> bg = BaseGeometry()
+>>> bg.integer_validator("Hello")
+Traceback (most recent call last):
+ValueError: Hello must be greater than 0
+
+>>> bg = BaseGeometry()
+>>> bg.integer_validator()
+Traceback (most recent call last):
+ValueError:  must be greater than 0
+
+>>> bg = BaseGeometry()
+>>> bg.integer_validator("Hello", None)
+Traceback (most recent call last):
+TypeError: Hello must be an integer
+
+>>> bg = BaseGeometry()
+>>> bg.integer_validator("Hello", {'a': 1, 'b': 1})
+Traceback (most recent call last):
+TypeError: Hello must be an integer
+
