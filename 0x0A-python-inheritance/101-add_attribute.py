@@ -8,11 +8,10 @@
 def add_attribute(obj, attribute="", name=""):
     """
         function that adds a new attribute to an object
+        #if hasattr(obj, '__dict__'): we can use this ption too
+        for comparing if it is an instance
+
     """
     if '__dict__' not in dir(obj):
-            raise TypeError("can't add new attribute")
-    if attribute == "" or name == "" or obj == "":
-        raise TypeError("can't add new attribute")
-    if type(attribute) is not str or type(name) is not str:
         raise TypeError("can't add new attribute")
     setattr(obj, attribute, name)
