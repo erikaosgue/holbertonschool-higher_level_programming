@@ -46,3 +46,11 @@ TypeError: Hello must be an integer
 Traceback (most recent call last):
 TypeError: Hello must be an integer
 
+>>> bg.integer_validator("Hello", -2)
+Traceback (most recent call last):
+ValueError: Hello must be greater than 0
+
+>>> bg.integer_validator("Hello", {1, 1})
+Traceback (most recent call last):
+TypeError: Hello must be an integer
+
