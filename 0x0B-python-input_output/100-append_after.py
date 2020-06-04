@@ -16,10 +16,11 @@ def append_after(filename="", search_string="", new_string=""):
         finding the search string
     """
     with open(filename, 'r+') as f:
-        lines = f.readlines()
-        for i, line in enumerate(lines):
+        new_file = ""
+        for line in f:
             if search_string in line:
-                lines[i] = lines[i].strip() + '\n' + new_string
+                new_file += line + new_string
+            else:
+                new_file += line
         f.seek(0)
-        for line in lines:
-            f.write(line)
+        f.write(new_file)
