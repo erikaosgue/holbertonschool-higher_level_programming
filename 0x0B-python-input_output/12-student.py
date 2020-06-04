@@ -13,14 +13,14 @@ class Student:
     age
     """
 
-    def __init__(self, first_name="", last_name="", age=0):
+    def __init__(self, first_name, last_name, age):
         self.first_name = first_name
         self.last_name = last_name
         self.age = age
 
     def to_json(self, attrs=None):
         dic = {}
-        if attrs and all(isinstance(item, str) for item in attrs):
+        if attrs and isinstance(attrs, list) and all(isinstance(item, str) for item in attrs):
             for key in attrs:
                 if key in self.__dict__ and type(key) is str:
                     dic[key] = self.__dict__[key]
