@@ -20,7 +20,7 @@ class Student:
 
     def to_json(self, attrs=None):
         dic = {}
-        if attrs:
+        if attrs and all(isinstance(item, str) for item in attrs):
             for key in attrs:
                 if key in self.__dict__ and type(key) is str:
                     dic[key] = self.__dict__[key]
