@@ -19,7 +19,7 @@ class Student:
         self.age = age
 
     def to_json(self, attrs=None):
-        if (attrs) and type(attrs) is list and\
+        if (attrs is not None) and type(attrs) is list and\
                 all(type((item) is str) for item in attrs):
             dic = {}
             for key in attrs:
