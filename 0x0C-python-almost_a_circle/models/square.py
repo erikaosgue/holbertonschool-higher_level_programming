@@ -1,9 +1,9 @@
 #!/usr/bin/code
 """
     10. And now, the Square!
-    models/square.py
+    models.square.py
 """
-from .rectangle import Rectangle
+from models.rectangle import Rectangle
 
 
 class Square(Rectangle):
@@ -11,11 +11,9 @@ class Square(Rectangle):
 
     def __init__(self, size, x=0, y=0, id=None):
         """ calling the constructor of Rectangle to assing the values
-         of rectangle """
+            of rectangle """
         Rectangle.__init__(self, width=size, height=size, x=x, y=y, id=id)
 
-    # I am calling the publics values, x y and widht, by doing it trhough
-    # the setter and getter
     def __str__(self):
         """Return a string representation of the square """
         s = ""
