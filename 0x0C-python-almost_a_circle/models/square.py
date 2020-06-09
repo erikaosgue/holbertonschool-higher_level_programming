@@ -12,8 +12,7 @@ class Square(Rectangle):
     def __init__(self, size, x=0, y=0, id=None):
         """ calling the constructor of Rectangle to assing the values
          of rectangle """
-        # super().__init__(size, size, x, y, id)
-        Rectangle.__init__(self, size, size, x, y, id)
+        Rectangle.__init__(self, width=size, height=size, x=x, y=y, id=id)
 
     # I am calling the publics values, x y and widht, by doing it trhough
     # the setter and getter
