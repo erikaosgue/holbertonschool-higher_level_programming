@@ -73,6 +73,22 @@ class Test_Base(unittest.TestCase):
         json_dictionary = Base.to_json_string(None)
         self.assertEqual(json_dictionary.__str__(), '[]')
 
+        json_dictionary = Base.to_json_string("Hello")
+        self.assertEqual(json_dictionary.__str__(), '"Hello"')
+
+        json_dictionary = Base.to_json_string([{}])
+        self.assertEqual(json_dictionary, '[{}]')
+
+        with self.assertRaises(TypeError):
+            Base.to_json_string()
+
+        with self.assertRaises(TypeError):
+            Base.to_json_string(1, 2)
+
+        json_dictionary = Base.to_json_string([{'1': 'True'}, {'2': 'False'}])
+        self.assertEqual(json_dictionary.__str__(),
+                         '[{"1": "True"}, {"2": "False"}]')
+
     def test_Json_string_to_file(self):
         """Test Save a Json String into a file"""
 
