@@ -65,7 +65,10 @@ class Base:
     @classmethod
     def create(cls, **dictionary):
         """Creates a new instance base in the dictionary """
-        x = cls(10, 10)
+        if cls.__name__ == "Rectangle":
+            x = cls(10, 10)
+        else if cls.__name__ == "Square":
+            x = cls(10)
         x.update(**dictionary)
         return x
 
