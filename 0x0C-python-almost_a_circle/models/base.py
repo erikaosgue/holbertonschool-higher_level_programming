@@ -67,7 +67,7 @@ class Base:
         """Creates a new instance base in the dictionary """
         if cls.__name__ == "Rectangle":
             x = cls(10, 10)
-        else if cls.__name__ == "Square":
+        elif cls.__name__ == "Square":
             x = cls(10)
         x.update(**dictionary)
         return x
