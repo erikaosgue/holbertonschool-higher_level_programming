@@ -99,3 +99,7 @@ class Test_Base(unittest.TestCase):
         with open("Rectangle.json", "r", enconding="UTF-8") as file:
             self.assertCountEqual(str(file.read(
             )), '[{"y": 8, "x": 2, "id": 1, "width": 10, "height": 7}, {"y": 0, "x": 0, "id": 2, "width": 2, "height": 4}]')
+
+
+if __name__ == "__main__":
+    unittest.main()
