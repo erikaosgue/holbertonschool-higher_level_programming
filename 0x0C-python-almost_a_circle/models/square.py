@@ -1,4 +1,4 @@
-#!/usr/bin/code
+#!/usr/bin/python3
 """
     10. And now, the Square!
     models.square.py
@@ -14,13 +14,6 @@ class Square(Rectangle):
             of rectangle """
         Rectangle.__init__(self, width=size, height=size, x=x, y=y, id=id)
 
-    def __str__(self):
-        """Return a string representation of the square """
-        s = ""
-        s += "[Square] ({}) {:d}/{:d} - {:d}".format(
-            self.id, self.x, self.y, self.width)
-        return s
-
     @property
     def size(self):
         """The getter size of the square """
@@ -31,6 +24,13 @@ class Square(Rectangle):
         """ Verifies first the value before setting it """
         self.width = value
         self.height = value
+
+    def __str__(self):
+        """Return a string representation of the square """
+        s = ""
+        s += "[Square] ({}) {:d}/{:d} - {:d}".format(
+            self.id, self.x, self.y, self.width)
+        return s
 
     def update(self, *args, **kwargs):
         """Update the value atributes of the actual instance """
