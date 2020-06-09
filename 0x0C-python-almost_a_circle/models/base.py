@@ -16,6 +16,7 @@ class Base:
     __nb_objects = 0
 
     def __init__(self, id=None):
+        """Constrictor """
         if id is not None:
             self.id = id
         else:
@@ -39,12 +40,15 @@ class Base:
             # json_str = Base.to_json_string(list(map(lambda x: x.
             # to_dictionary(), list_objs)))
             list_dict = []
-            for instance in list_objs:
-                # list_dict = list_dict + [(instance.to_dictionary())]
-                # list_dict += [(instance.to_dictionary())]
-                list_dict.append(instance.to_dictionary())
-            json_str = Base.to_json_string(list_dict)
-            file.write(json_str)
+            if list_objs is None:
+                file.write("[]")
+            else:
+                for instance in list_objs:
+                    # list_dict = list_dict + [(instance.to_dictionary())]
+                    # list_dict += [(instance.to_dictionary())]
+                    list_dict.append(instance.to_dictionary())
+                json_str = Base.to_json_string(list_dict)
+                file.write(json_str)
 
     @staticmethod
     def from_json_string(json_string):
