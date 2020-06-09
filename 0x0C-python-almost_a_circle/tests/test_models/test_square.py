@@ -22,7 +22,7 @@ class Test_Square(unittest.TestCase):
         """Checks the datatype of the square """
 
         s1 = Square(5)
-        self.assertEqual(str(s1), "[Square] ({}) 0/0 - 5".format(s1.id))
+        self.assertEqual(s1.__str__(), "[Square] (1) 0/0 - 5")
         self.assertEqual(s1.area(), 25)
         # display
         f = io.StringIO()
@@ -47,6 +47,24 @@ class Test_Square(unittest.TestCase):
         with redirect_stdout(f3):
             s3.display()
         self.assertEqual(f3.getvalue(), "\n\n\n ###\n ###\n ###\n")
+
+        with self.assertRaises(TypeError):
+            s4 = Square()
+
+        with self.assertRaisesRegex(TypeError, "x must be an integer"):
+            s5 = Square(1, [2], [3])
+
+        with self.assertRaisesRegex(ValueError, "y must be >= 0"):
+            s6 = Square(1, 2, -3)
+
+        with self.assertRaisesRegex(ValueError, "x must be >= 0"):
+            s7 = Square(1, -2, -3)
+
+        with self.assertRaisesRegex(TypeError, "y must be an integer"):
+            s8 = Square(1, 2, [3])
+
+        with self.assertRaises(TypeError):
+            s9 = Square(1, 2, 3, 4, 5, 6)
 
     def test_square_size(self):
         """ Test for checking the size of the square """
