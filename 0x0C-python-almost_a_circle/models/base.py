@@ -119,10 +119,3 @@ class Base:
             return list_of_instances
         except FileNotFoundError:
             return []
-
-    def draw(list_rectangles, list_squares):
-        tim = turtle.Turtle()
-        tim.color('red')
-        tim.pensize(5)
-        tim.shapen('turtle')
-        turtle.done()
