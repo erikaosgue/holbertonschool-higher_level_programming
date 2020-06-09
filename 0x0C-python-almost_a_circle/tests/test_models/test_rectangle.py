@@ -30,7 +30,7 @@ class Test_Rectangle(unittest.TestCase):
         r3 = Rectangle(10, 2, 0, 0, 12)
         self.assertEqual(r3.id, 12)
 
-        with self.assertRaises(TypeError, "height must be an integer"):
+        with self.assertRaisesRegex(TypeError, "height must be an integer"):
             Rectangle(1, None, 2)
             # TypeError: height must be an integer
 
