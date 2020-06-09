@@ -15,18 +15,19 @@ class Test_Rectangle(unittest.TestCase):
     """
 
     def tearDown(self):
+        """ Updates the id """
         Base.__nb_objects = 0
 
     def test_first_rectangle_datatype(self):
         """Test Rectangle Class"""
 
-        # r1 = Rectangle(10, 2)
-        # # self.assertEqual(r1.id, 10)
-        # self.assertEqual(r1.id, 7)
+        r1 = Rectangle(10, 2)
+        # self.assertEqual(r1.id, 10)
+        self.assertEqual(r1.id, 7)
 
-        # r2 = Rectangle(2, 10)
-        # # self.assertEqual(r2.id, 11)
-        # self.assertEqual(r2.id, 8)
+        r2 = Rectangle(2, 10)
+        # self.assertEqual(r2.id, 11)
+        self.assertEqual(r2.id, 8)
 
         r3 = Rectangle(10, 2, 0, 0, 12)
         self.assertEqual(r3.id, 12)
@@ -82,14 +83,17 @@ class Test_Rectangle(unittest.TestCase):
         # only 1 arg
         with self.assertRaises(TypeError):
             Rectangle(1)
-            # TypeError: __init__() missing 1 required positional argument: 'height'
+            # TypeError: __init__() missing 1 required positional
+            # argument: 'height'
 
         # too many args
         with self.assertRaises(TypeError):
             Rectangle(1, 2, 3, 4, 5, 6)
-            # TypeError: __init__() takes from 3 to 6 positional arguments but 7 were given
+            # TypeError: __init__() takes from 3 to 6 positional
+            #  arguments but 7 were given
 
     def test_validate_rectangle(self):
+        """Validate rectangle """
 
         with self.assertRaises(TypeError):
             Rectangle(10, "2")
@@ -106,6 +110,8 @@ class Test_Rectangle(unittest.TestCase):
             Rectangle(10, 2, 3, -1)
 
     def test_area_first(self):
+        """Test for area """
+
         r1 = Rectangle(3, 2)
         self.assertEqual(r1.area(), 6)
 
@@ -116,6 +122,7 @@ class Test_Rectangle(unittest.TestCase):
         self.assertEqual(r3.area(), 56)
 
     def test_display_0(self):
+        """ Test display """
 
         r1 = Rectangle(4, 6)
         f = io.StringIO()
@@ -130,6 +137,7 @@ class Test_Rectangle(unittest.TestCase):
         self.assertEqual(f.getvalue(), "##\n##\n")
 
     def test_str_(self):
+        """test for string """
 
         r1 = Rectangle(4, 6, 2, 1, 12)
         self.assertEqual(str(r1), "[Rectangle] ({}) 2/1 - 4/6".format(r1.id))
@@ -138,6 +146,7 @@ class Test_Rectangle(unittest.TestCase):
         self.assertEqual(str(r2), "[Rectangle] ({}) 1/0 - 5/5".format(r2.id))
 
     def test_display_1(self):
+        """ Test for display """
 
         r1 = Rectangle(2, 3, 2, 2)
         f = io.StringIO()
@@ -152,6 +161,7 @@ class Test_Rectangle(unittest.TestCase):
         self.assertEqual(f.getvalue(), " ###\n ###\n")
 
     def test_update_0(self):
+        """Test for update """
 
         r1 = Rectangle(10, 10, 10, 10)
         self.assertEqual(
@@ -175,6 +185,7 @@ class Test_Rectangle(unittest.TestCase):
         self.assertEqual(str(r1), "[Rectangle] ({}) 4/5 - 2/3".format(r1.id))
 
     def test_update_1(self):
+        """Test for Update 1 """
 
         r1 = Rectangle(10, 10, 10, 10)
         self.assertEqual(
@@ -194,12 +205,14 @@ class Test_Rectangle(unittest.TestCase):
         self.assertEqual(str(r1), "[Rectangle] ({}) 1/3 - 4/2".format(r1.id))
 
     def test_rectangle_ins_to_dic_13(self):
+        """ Test rectangle that """
 
         r1 = Rectangle(10, 2, 1, 9)
         self.assertEqual(str(r1), "[Rectangle] ({}) 1/9 - 10/2".format(r1.id))
         r1_dictionary = r1.to_dictionary()
         self.assertEqual(
-            r1_dictionary, {'x': 1, 'y': 9, 'id': r1.id, 'height': 2, 'width': 10})
+            r1_dictionary,
+            {'x': 1, 'y': 9, 'id': r1.id, 'height': 2, 'width': 10})
 
         r2 = Rectangle(1, 1)
         r2.update(**r1_dictionary)

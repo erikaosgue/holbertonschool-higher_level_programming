@@ -6,6 +6,7 @@ import unittest
 import io
 from contextlib import redirect_stdout
 from models.square import Square
+from models.base import Base
 
 
 class Test_Square(unittest.TestCase):
@@ -13,7 +14,12 @@ class Test_Square(unittest.TestCase):
     Args unittest.TestCase
     """
 
+    def tearDown(self):
+        """Function that updates the id"""
+        Base.__nb_objects = 0
+
     def test_square(self):
+        """Checks the datatype of the square """
 
         s1 = Square(5)
         self.assertEqual(str(s1), "[Square] ({}) 0/0 - 5".format(s1.id))
@@ -43,6 +49,7 @@ class Test_Square(unittest.TestCase):
         self.assertEqual(f3.getvalue(), "\n\n\n ###\n ###\n ###\n")
 
     def test_square_size(self):
+        """ Test for checking the size of the square """
         s1 = Square(5)
         self.assertEqual(str(s1), "[Square] ({}) 0/0 - 5".format(s1.id))
         self.assertEqual(s1.size, 5)
@@ -53,6 +60,7 @@ class Test_Square(unittest.TestCase):
             s1.size = "9"
 
     def test_square_update(self):
+        """ Checks for the function Update"""
         s1 = Square(5)
         self.assertEqual(str(s1), "[Square] ({}) 0/0 - 5".format(s1.id))
 
@@ -78,6 +86,7 @@ class Test_Square(unittest.TestCase):
         self.assertEqual(str(s1), "[Square] ({}) 12/1 - 7".format(s1.id))
 
     def test_square_ins_to_dic_14(self):
+        """ Check for the instance transformation into a dict """
 
         s1 = Square(10, 2, 1)
         self.assertEqual(str(s1), "[Square] ({}) 2/1 - 10".format(s1.id))

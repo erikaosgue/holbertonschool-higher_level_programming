@@ -14,6 +14,7 @@ class Test_Base(unittest.TestCase):
     """
 
     def tearDown(self):
+        """Function that updates the id"""
         Base.__nb_objects = 0
 
     def test_base_datatype(self):
@@ -71,6 +72,7 @@ class Test_Base(unittest.TestCase):
         # self.assertEqual(b19.id, "-inf")
 
     def test_dictionary_to_Json(self):
+        """ Test Convert a Dictionary into a Json strin """
 
         r1 = Rectangle(10, 7, 2, 8)
 
@@ -87,6 +89,7 @@ class Test_Base(unittest.TestCase):
         self.assertEqual(str(json_dictionary), '[]')
 
     def test_Json_string_to_file(self):
+        """Test Save a Json String into a file"""
 
         r1 = Rectangle(10, 7, 2, 8)
         r2 = Rectangle(2, 4)
