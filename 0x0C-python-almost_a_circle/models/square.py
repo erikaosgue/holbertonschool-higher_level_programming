@@ -10,8 +10,8 @@ class Square(Rectangle):
     """ A class that inherits from rectangle """
 
     def __init__(self, size, x=0, y=0, id=None):
-        # calling the constructor of Rectangle to assing the values
-        # of rectangle
+        """ calling the constructor of Rectangle to assing the values
+         of rectangle """
         # super().__init__(size, size, x, y, id)
         Rectangle.__init__(self, size, size, x, y, id)
 
