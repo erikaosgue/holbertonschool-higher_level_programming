@@ -4,6 +4,7 @@
 """
 import unittest
 import io
+import pep8
 from contextlib import redirect_stdout
 from models.square import Square
 from models.base import Base
@@ -18,6 +19,12 @@ class Test_Square(unittest.TestCase):
         """Function that updates the id"""
         Base.__nb_objects = 0
 
+    def test_pep8_style(self):
+        """Test that we conform to PEP8."""
+        pep8style = pep8.StyleGuide(quiet=True)
+        result = pep8style.check_files(['models/square.py'])
+        self.assertEqual(
+            result.total_errors, 0, "Found code style errors (and warnings).")
     def test_square(self):
         """Checks the datatype of the square """
 
@@ -31,7 +38,7 @@ class Test_Square(unittest.TestCase):
         self.assertEqual(f.getvalue(), "#####\n#####\n#####\n#####\n#####\n")
 
         s2 = Square(2, 2)
-        self.assertEqual(str(s2), "[Square] ({}) 2/0 - 2".format(s2.id))
+        self.assertEqual(str(s2), "[Square] (2) 2/0 - 2")
         self.assertEqual(s2.area(), 4)
         # display
         f2 = io.StringIO()

@@ -4,6 +4,7 @@
 """
 import unittest
 import os
+import pep8
 from models.base import Base
 from models.rectangle import Rectangle
 from models.square import Square
@@ -17,6 +18,13 @@ class Test_Base(unittest.TestCase):
     def tearDown(self):
         """Function that updates the id"""
         Base._Base__nb_objects = 0
+
+    def test_pep8_style(self):
+        """Test that we conform to PEP8."""
+        pep8style = pep8.StyleGuide(quiet=True)
+        result = pep8style.check_files(['models/base.py'])
+        self.assertEqual(
+            result.total_errors, 0, "Found code style errors (and warnings).")
 
     def test_base_datatype(self):
         """Test base"""
@@ -64,7 +72,7 @@ class Test_Base(unittest.TestCase):
         dictionary = r1.to_dictionary()
         json_dictionary = Base.to_json_string([dictionary])
         self.assertEqual(dictionary,
-                         {'x': 2, 'width': 10, 'id': r1.id, 'height': 7, 'y': 8})
+                         {'x': 2, 'width': 10, 'id': 1, 'height': 7, 'y': 8})
 
         # test list of dictionaries None
         json_dictionary = Base.to_json_string([])

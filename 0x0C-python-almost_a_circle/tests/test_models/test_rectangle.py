@@ -4,6 +4,7 @@
 """
 import unittest
 import io
+import pep8
 from contextlib import redirect_stdout
 from models.rectangle import Rectangle
 from models.base import Base
@@ -18,6 +19,12 @@ class Test_Rectangle(unittest.TestCase):
         """ Updates the id """
         Base._Base__nb_objects = 0
 
+    def test_pep8_style(self):
+        """Test that we conform to PEP8."""
+        pep8style = pep8.StyleGuide(quiet=True)
+        result = pep8style.check_files(['models/rectangle.py'])
+        self.assertEqual(
+            result.total_errors, 0, "Found code style errors (and warnings).")
     def test_first_rectangle_datatype(self):
         """Test Rectangle Class"""
 
@@ -86,24 +93,25 @@ class Test_Rectangle(unittest.TestCase):
         # too many args
         with self.assertRaises(TypeError):
             Rectangle(1, 2, 3, 4, 5, 6)
-            # TypeError: __init__() takes from 3 to 6 positional
-            #  arguments but 7 were given
+
+        with self.assertRaises(TypeError):
+            Rectangle()
 
     def test_validate_rectangle(self):
         """Validate rectangle """
 
-        with self.assertRaises(TypeError):
+        with self.assertRaisesRegex(TypeError, "height must be an integer"):
             Rectangle(10, "2")
 
-        with self.assertRaises(ValueError):
+        with self.assertRaisesRegex(ValueError, "width must be > 0"):
             r = Rectangle(10, 2)
             r.width = -10
 
-        with self.assertRaises(TypeError):
+        with self.assertRaisesRegex(TypeError, "x must be an integer"):
             r = Rectangle(10, 2)
             r.x = {}
 
-        with self.assertRaises(ValueError):
+        with self.assertRaisesRegex(ValueError, "y must be >= 0"):
             Rectangle(10, 2, 3, -1)
 
     def test_area_first(self):
