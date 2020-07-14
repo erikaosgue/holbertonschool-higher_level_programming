@@ -2,4 +2,5 @@
 -- A script that lists all records of the table second_table
 SELECT score, name 
 FROM second_table 
-WHERE name not in ("name");
+WHERE name not in ("name")
+ORDER BY score DESC;
