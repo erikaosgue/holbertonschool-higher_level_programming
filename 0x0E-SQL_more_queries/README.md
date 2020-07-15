@@ -229,7 +229,7 @@ Write a script that lists all shows without the genre Comedy in the database hbt
 * You can use a maximum of two SELECT statement
 * The database name will be passed as an argument of the mysql command
 
-[19](https://github.com/erikaosgue/holbertonschool-higher_level_programming/blob/master/0x0E-SQL_more_queries/102-rating_shows.sql)
+[19. Rotten tomatoes](https://github.com/erikaosgue/holbertonschool-higher_level_programming/blob/master/0x0E-SQL_more_queries/102-rating_shows.sql)
 
 Import the database hbtn_0d_tvshows_rate dump to your MySQL server: download
 
