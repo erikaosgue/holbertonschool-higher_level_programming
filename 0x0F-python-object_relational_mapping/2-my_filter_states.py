@@ -13,14 +13,16 @@ def main():
         my_db = argv[3]
         states_name = argv[4]
         try:
-            db = MySQLdb.connect(host="localhost", user=my_user,
-                                 passwd=my_passw, db=my_db, port=3306)
+            db = MySQLdb.connect(host="localhost",
+                                 user=my_user,
+                                 passwd=my_passw,
+                                 db=my_db,
+                                 port=3306)
         except:
-            print("[Error]: one or more argms invalid")
             return 0
         cursor = db.cursor()
-        cursor.execute("""SELECT * FROM states WHERE states.name in (%s)
-                       ORDER BY states.id""", (states_name,))
+        cursor.execute("""SELECT * FROM states
+                          WHERE states.name = '{}'""".format(states_name))
         cursor.fetchall()
         for row in cursor:
             print(row)
