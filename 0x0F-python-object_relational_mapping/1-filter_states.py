@@ -13,17 +13,20 @@ def main():
         my_passw = argv[2]
         my_db = argv[3]
         try:
-            db = MySQLdb.connect(host="localhost", user=my_user,
-                                 passwd=my_passw, db=my_db, port=3306)
+            db = MySQLdb.connect(host="localhost",
+                                 user=my_user,
+                                 passwd=my_passw,
+                                 db=my_db,
+                                 port=3306)
         except:
             return 0
 
         cursor = db.cursor()
-        cursor.execute("""SELECT * FROM states WHERE states.name LIKE 'N%'
-                       ORDER BY states.id""")
+        cursor.execute("""SELECT * FROM states ORDER BY states.id""")
         cursor.fetchall()
         for row in cursor:
-            print(row)
+            if (row[1][0] == "N"):
+                print(row)
         db.close()
 
 
