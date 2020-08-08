@@ -10,7 +10,9 @@ Base = declarative_base()
 
 
 class State(Base):
-    """State class - the represention of table states in mysql database hbtn_0e_6_usa
+    """State class - the represention of table states in mysql
+       database hbtn_0e_6_usa
+
         __tablename__ = name of the table
         id = states id
         name = name of the state
