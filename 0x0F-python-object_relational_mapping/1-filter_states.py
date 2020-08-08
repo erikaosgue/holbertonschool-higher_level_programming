@@ -16,7 +16,6 @@ def main():
             db = MySQLdb.connect(host="localhost", user=my_user,
                                  passwd=my_passw, db=my_db, port=3306)
         except:
-            print("[Error]: one or more argms invalid")
             return 0
 
         cursor = db.cursor()
