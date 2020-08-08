@@ -22,7 +22,8 @@ def main():
             return 0
         cursor = db.cursor()
         cursor.execute("""SELECT * FROM states
-                          WHERE states.name = '{}' ORDER BY states.id""".format(states_name))
+                          WHERE BINARY states.name = '{}'
+                          ORDER BY states.id""".format(states_name))
         cursor.fetchall()
         for row in cursor:
             print(row)
