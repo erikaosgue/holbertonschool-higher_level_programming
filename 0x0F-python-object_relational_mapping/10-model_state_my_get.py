@@ -21,10 +21,12 @@ if __name__ == "__main__":
     # i have to instantiate a Session
     session = Session()
 
+    find_state = False
     for state in session.query(State):
         if state.name == argv[4]:
             print("{}".format(state.id))
             find_state = True
+            break
 
     if find_state is False:
         print("Not found")
