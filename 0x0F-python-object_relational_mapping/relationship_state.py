@@ -22,5 +22,9 @@ class State(Base):
     id = Column(Integer, primary_key=True, nullable=False)
     name = Column(String(128), nullable=False)
 
+    # the relatioship makes the Class City have a class atribute state &
+    # the class State have the attribute cities
+    # Ej: city.state.name = name of the state of that city
+    # EJ: state.cities.name = name of the city of that state
     cities = relationship("City", backref="state",
                           cascade="all, delete")

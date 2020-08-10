@@ -26,6 +26,6 @@ if __name__ == "__main__":
 
     for state in session.query(State).order_by(State.id):
         print("{}: {}".format(state.id, state.name))
-        # state.cities will call the table from class City
+        # state.cities will call the table that point to class City
         for city in state.cities:
             print("\t{}: {}".format(city.id, city.name))
