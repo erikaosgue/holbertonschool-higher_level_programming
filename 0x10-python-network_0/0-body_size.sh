@@ -4,5 +4,5 @@
 # s silent option, quiet mode, so don't show more than what i am asking for
 # I  Fetch the headers only!
 
-curl -sI "$1" | awk '/Content-Length/ { print $2 }'
+curl -s "$1"| wc -c 
 
