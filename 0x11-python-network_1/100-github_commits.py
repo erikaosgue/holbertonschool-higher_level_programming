@@ -13,7 +13,10 @@ if __name__ == "__main__":
     response = requests.get(url)
     list_of_dict = response.json()
 
-    for i in range(10):
-        print("{}: {}".format(
-            list_of_dict[i].get("sha"),
-            list_of_dict[i].get("commit").get("author").get("name")))
+    try:
+        for i in range(10):
+            print("{}: {}".format(
+                list_of_dict[i].get("sha"),
+                list_of_dict[i].get("commit").get("author").get("name")))
+    except:
+        pass
