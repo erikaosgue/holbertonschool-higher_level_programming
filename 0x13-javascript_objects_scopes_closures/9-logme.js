@@ -1,8 +1,5 @@
 #!/usr/bin/node
+let index = 0;
 exports.logMe = function (item) {
-  const newList = [];
-  newList.push(item);
-  for (let i = 0; i < newList.length; i++) {
-    console.log(i + ': ' + newList[i]);
-  }
+  console.log(`${index++}: ${item}`);
 };
