@@ -1,4 +1,4 @@
 #!/usr/bin/node
-$('DIV#header').click(function () {
+$('DIV#red_header').click(function () {
   $('HEADER').css('color', '#FF0000');
 });
